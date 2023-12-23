@@ -2,6 +2,18 @@
 
 @section('title', '投稿詳細')
 
+@if ($errors->any())
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+
+@endif
+
+
 @section('content')
     @if (session('flash_message'))
         <p class="text-success">{{ session('flash_message') }}</p>
